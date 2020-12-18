@@ -403,8 +403,7 @@ footer{
 }
 @media (max-width: 768px){
 	.vygoda{max-width: 400px;}
-	.span{padding: 30px;
-}
+	.span{padding: 30px;}
 }
 .vygoda._active{
 	transform: translate(0px,0px);
@@ -442,11 +441,12 @@ footer{
 }
 .effect-5:before {
   width: 100%;
-  height: 1px;
+  height: 3px;
   transform: translateX(-100%);
+  z-index: 1
 }
 .effect-5:after {
-  width: 1px;
+  width: 3px;
   height: 100%;
   transform: translateY(100%);
 }
@@ -461,11 +461,11 @@ footer{
 }
 .effect-5 > .span:before {
   width: 100%;
-  height: 1px;
+  height: 3px;
   transform: translateX(100%);
 }
 .effect-5 > .span:after {
-  width: 1px;
+  width: 3px;
   height: 100%;
   transform: translateY(-100%);
 }
@@ -792,7 +792,7 @@ h4.accordeon-header{
 
 /*SECTION FEEDBACK*/
 
-.feedback{
+#feedback{
 	min-height: 30vh;
 	background-color: black;
 }
@@ -879,15 +879,17 @@ h4.accordeon-header{
 	height: 15px;
 	padding-right: 4px;	
 }
-.telephones,.mail{
+.mail,.socicons{
 	display: flex;
 	flex-flow: column;
 	flex:1 1 25%;
+	align-items: flex-end;
 }
-.socicons{
+.telephones{
 	display: flex;
 	flex-flow: column;	
-	flex:1 1 50%;	
+	flex:1 1 50%;
+	align-items:	flex-end;	
 }
 .icons{
 	display: flex;
@@ -918,7 +920,6 @@ h4.accordeon-header{
 		flex:1 1 50%;
 	}
 	.socicons{
-		flex:1 1 100%;
 		text-align: left;
 		margin-top: 15px;		
 	}
@@ -928,11 +929,15 @@ h4.accordeon-header{
 	.icons{
 		justify-content: flex-start;
 	}
+	.header-contacts .contacts,.header-contacts .mail,.header-contacts .telephones{
+	align-items: center;
+	}
 }
 @media (max-width: 768px){
 	.contacts{		
 		font-size: 110%;
 		padding: 0;
+		flex-direction: column;
 	}
 	.contacts-title{
 		margin-top: 15px;
@@ -989,7 +994,7 @@ h4.accordeon-header{
 	max-width: 500px;
 	background-color:black;
 	color:white;
-	padding: 20px;
+	padding: 20px 40px;
 	border-radius: 10px;
 	position: relative;
 	opacity: 0;
@@ -1006,7 +1011,7 @@ h4.accordeon-header{
 	border-radius: 50%;
 	transition: 1s;
 	margin-top: -15px;
-	margin-right: -15px;
+	margin-right: -35px;
 }
 .popup__close span,.popup__close span::before{
 	position: absolute;
@@ -1030,18 +1035,16 @@ h4.accordeon-header{
 	transform: rotate(360deg);
 }
 .popup__title{
-	margin-top: 2em;
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 	font-size: 1.2em;
 	text-align: center;
 }
 .popup-image-container{
 	width: 100%;
 	display: flex;
-	flex-flow: row nowrap;	
 	align-items: center;
-	padding:40px;
-	justify-content: space-between;
+	padding:40px 10%;
+	justify-content: center;
 }
 .popup-image-fon{
 	display: flex;
@@ -1049,27 +1052,13 @@ h4.accordeon-header{
 	align-items: center;
 }
 .animation{
-	width: 90%;
-}
-.popup-image{
-	color:white;
-	font-size:7em;
-	animation-name: tada;
-	animation-duration: 1.3s;
-	animation-iteration-count:infinite;
-}
-@keyframes tada{
-  	0% {transform: scale(1);} 
-  	10%, 20% {transform: scale(0.9) rotate(-6deg);} 
-  	30%, 50%, 70%, 90% {transform: scale(1.1) rotate(6deg);} 
-  	40%, 60%, 80% {transform: scale(1.1) rotate(-6deg);} 
-  	100% {transform: scale(1) rotate(0);} 
+	display: flex;
+	justify-content: center;
 }
 .popup-image-text{
 	color:white;
-	display: flex;	
-	text-align: right;
-	font-size: 2em;
+	display: flex;		
+	font-size: 1.9em;
 }
 
 
@@ -1078,9 +1067,12 @@ h4.accordeon-header{
 
 .ring{	
 	position:fixed;
-	bottom:20px;
-	right:0;
+	bottom:30px;
+	left:180px;	
 	z-index: 1;
+}
+@media (max-width: 1000px){
+	.ring{left:160px;}
 }
 .img-circle{
 	background-color:#e31f1b;
