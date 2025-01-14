@@ -951,7 +951,10 @@ h4.accordeon-header{
 	display: flex;
 	align-items: center;	
 }
-.in .buzz-anim::before{
+.buzz-anim::before{	
+	font-size: 2em;
+}
+/*.in .buzz-anim::before{
 	-webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
 }
@@ -983,13 +986,13 @@ h4.accordeon-header{
   100% {
      -webkit-transform: scale(1,1);
   }
-}
+}*/
 .accordeon-header:hover,.accordeon-header.in{
 	background-color:black ;
 	color:white;
 }
 .icon-dropdown::before{
-	font-size: .75em;
+	font-size: .5em;
 	transition: all 0.3s ease;
 }
 .accordeon-header.in .icon-dropdown::before{
@@ -1164,7 +1167,7 @@ h4.accordeon-header{
 }
 .icon{
 	color:white;
-	font-size: 2.5em;
+	font-size: 2em;
 	margin:0 10px;	
 }
 .icon:last-child{
